@@ -15,7 +15,6 @@ using System.Linq;
 namespace FullStackPhoneBook.EndPoints.MVC.Controllers
 {
 
-    //[Authorize]
     public class PeopleController : Controller
     {
         private readonly ITagRepository _tagRepository;

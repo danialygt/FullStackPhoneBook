@@ -35,6 +35,7 @@ namespace FullStackPhoneBook.EndPOints.MVC
 
 
             services.AddMvc();
+
             services.AddDbContext<PhoneBookContext>(c => c.UseSqlServer(Configuration.GetConnectionString("phoneBook")));
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IPersonTagRepository, PersonTagRepository>();
@@ -66,11 +67,11 @@ namespace FullStackPhoneBook.EndPOints.MVC
                 app.UseDeveloperExceptionPage();
             }
 
-
             app.UseRouting();
             app.UseStaticFiles();
 
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
@@ -78,7 +79,7 @@ namespace FullStackPhoneBook.EndPOints.MVC
                     name: "default",
                     pattern: "{controller=home}/{action=Index}/{id?}");
             });
-            
+
         }
     }
 }

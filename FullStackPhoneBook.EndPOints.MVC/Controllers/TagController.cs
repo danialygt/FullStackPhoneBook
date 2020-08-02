@@ -1,6 +1,7 @@
 ﻿using FullStackPhoneBook.Core.Contracts.Tags;
 using FullStackPhoneBook.Domain.Core.Tags;
 using FullStackPhoneBook.EndPoints.MVC.Models.Tags;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -10,8 +11,7 @@ namespace FullStackPhoneBook.EndPoints.MVC.Controllers
 {
 
 
-    //[Authorize]
-
+    [Authorize]
     public class TagController : Controller
     {
 

@@ -1,10 +1,12 @@
 ﻿using FullStackPhoneBook.EndPoints.MVC.Models.AAA;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace FullStackPhoneBook.EndPoints.MVC.Controllers
 {
+    [Authorize]
     public class RoleController : Controller
     {
         private readonly RoleManager<MyIdentityRole> roleManager;
