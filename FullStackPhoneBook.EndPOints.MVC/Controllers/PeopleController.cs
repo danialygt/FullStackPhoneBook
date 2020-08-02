@@ -2,6 +2,7 @@
 using FullStackPhoneBook.Core.Contracts.Phones;
 using FullStackPhoneBook.Core.Contracts.Tags;
 using FullStackPhoneBook.Domain.Core.People;
+using FullStackPhoneBook.Domain.Core.Phones;
 using FullStackPhoneBook.EndPoints.Models.People;
 using FullStackPhoneBook.EndPoints.MVC.Models.Phones;
 using Microsoft.AspNetCore.Mvc;
@@ -115,10 +116,10 @@ namespace FullStackPhoneBook.EndPoints.MVC.Controllers
                 }
             }
             catch { }
-
-
-            return View(person);
+            
+               return View(person);
         }
+
 
 
 
@@ -131,6 +132,10 @@ namespace FullStackPhoneBook.EndPoints.MVC.Controllers
             {
                 person = _personRepository.Get(id)
             };
+            if ( p.person == null)
+            {
+                ModelState.AddModelError("NotExictsUser", "This user not found!");
+            }
             return View(p);
         }
 
@@ -165,13 +170,19 @@ namespace FullStackPhoneBook.EndPoints.MVC.Controllers
         [HttpPost]
         public IActionResult EditPhone(int id, PhoneAddModel phoneAddModel)
         {
-            _phoneRepository.Delete(id);
-
-            _phoneRepository.Add(phoneAddModel.phone);
-
-            return Index();
+            
+            if (Enum.IsDefined(typeof(PhoneType), phoneAddModel.phone.PhoneType.ToString()))
+            {
+                _phoneRepository.Delete(id);
+                _phoneRepository.Add(phoneAddModel.phone);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ModelState.AddModelError("NotExicstType", "Phone type not exicts! please select one of the list");
+                return View(phoneAddModel);
+            }
         }
-
     }
 
 }

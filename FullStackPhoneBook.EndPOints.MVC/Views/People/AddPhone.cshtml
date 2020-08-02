@@ -1,23 +1,25 @@
 ﻿@model FullStackPhoneBook.EndPoints.MVC.Models.Phones.PhoneAddModel
 
 
-<form asp-action="AddPhone" asp-controller="People" method="post" >
-    <label> add phone for <b>@Model.person.FirstName @Model.person.LastName</b>: </label>
+    <form asp-action="AddPhone" asp-controller="People" method="post">
+        <label> add phone for <b>@Model.person.FirstName @Model.person.LastName</b>: </label>
 
-    <div class="form-group">
-        <label asp-for="@Model.phone.PhoneNumber"></label>
-        <input type="text" asp-for="@Model.phone.PhoneNumber" class="form-control" maxlength="50">
-        <span asp-validation-for="@Model.phone.PhoneNumber" class="text-danger"></span>
-    </div>
+        <div class="form-group col-2">
+            <label asp-for="@Model.phone.PhoneNumber"></label>
+            <input type="text" asp-for="@Model.phone.PhoneNumber" class="form-control" maxlength="50">
+            <span asp-validation-for="@Model.phone.PhoneNumber" class="text-danger"></span>
+        </div>
 
-    <div class="form-group">
-        <label asp-for="@Model.phone.PhoneType"></label>
-         asp-for="@Model.phone.PhoneType"
-                class="form-control"
-                asp-items="Html.GetEnumSelectList<FullStackPhoneBook.Domain.Core.Phones.PhoneType>()">
-            <option>Select type ...</option>
-        </select>
-    </div>
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <input type="submit" class="btn btn-primary mb-2" value="Save" />
-</form>
+        <div class="form-group col-2">
+            <label asp-for="@Model.phone.PhoneType"></label>
+            <select asp-for="@Model.phone.PhoneType"
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<FullStackPhoneBook.Domain.Core.Phones.PhoneType>
+                    ()">
+            </select>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group col-2">
+            <input type="submit" class="text-lg font-weight-bold btn btn-info m-2 p-2 float-right" value="Save" />
+        </div>
+    </form>

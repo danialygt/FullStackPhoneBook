@@ -1,64 +1,105 @@
 ﻿@model FullStackPhoneBook.Domain.Core.People.Person
 
-
-
-<span>Firstname:  @Model.FirstName</span>
-<br />
-<span>Lastname: @Model.LastName</span>
-<br />
-<span>Email: @Model.Email</span>
-<br />
-<br />
-<span>Address: @Model.Address</span>
-<br />
-<img src="@Model.Image" class="d-block float-right"   width="500px" height="500px"/>
-
-<br />
-<br />
-<br />
-
-<span>Tags: </span>
-@foreach (var item in Model.Tags)
+@if (Model != null)
 {
-    <span>@item.Tag.Title,  </span>
+    <div class="row">
+        <div class="col-2">
+            <img src="@Model.Image" class="d-inline-block border border-dark " style="width:8rem;height:10rem;" />
+        </div>
+        <div class="col-10">
+            <span>Firstname:  @Model.FirstName</span>
+            <br />
+            <span>Lastname: @Model.LastName</span>
+            <br />
+            <span>Email: @Model.Email</span>
+            <br />
+            <br />
+            <span>Address: @Model.Address</span>
+            <br />
+            <div>
+                <span>Tags: </span>
+                @foreach (var item in Model.Tags)
+                {
+                    <span>@item.Tag.Title,  </span>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="row">
+
+        <span>Phones: </span>
+        <table class="table table-bordered table-dark ">
+            <tr>
+                <th>Number</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+            @if (Model.Phones != null)
+            {
+                @foreach (var item in Model.Phones)
+                {
+                    <tr>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.PhoneType</td>
+                        <td>                    
+                            <a class="btn btn-info btn-icon-split" asp-action="EditPhone" asp-controller="People" asp-route-id="@item.Id">
+                                <span class="font-weight-bold m-1 text-gray-100">Edit Phone</span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" style="justify-content:center;">there is no phone number for <b>@Model.FirstName</b></td>
+                </tr>
+            }
+
+
+        </table>
+
+
+    </div>
+
+
+    <div class="row justify-content-end">
+        <div class="col-1">
+            <a class="btn btn-info btn-icon-split" asp-action="Index" asp-controller="People">
+                <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Back</span>
+            </a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-info btn-icon-split" asp-action="AddPhone" asp-controller="People" asp-route-id="@Model.Id">
+                <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Add Phone</span>
+            </a>
+        </div>
+
+
+
+    </div>
 
 }
+else
+{
+    <div class="row">
+        <div class="col">
+                <span class="text-lg p-2 font-weight-bold m-2 text-danger">Person Not Found!</span>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-1">
+            <a class="btn btn-info btn-icon-split" asp-action="Index" asp-controller="People">
+                <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Back</span>
+            </a>
+        </div>
+    </div>
 
-
-<br />
-<br />
-<br />
-
-
-<span>phones: </span>
-<table class="table table-bordered table-dark ">
-    <tr>
-        <th>Number</th>
-        <th>Type</th>
-        <th>Actions</th>
-    </tr>
-    @if (Model.Phones != null)
-    {
-        @foreach (var item in Model.Phones)
-        {
-            <tr>
-                <td>@item.PhoneNumber</td>
-                <td>@item.PhoneType</td>
-                <td><a asp-action="EditPhone" asp-controller="People" asp-route-id="@item.Id">Edit Phone</a></td>
-            </tr>
-        }
-    }
-    else
-    {
-        <tr>
-            <td colspan="2" style="justify-content:center;" >there is no phone number for <b>@Model.FirstName</b></td>
-        </tr>
-    }
-
-
-</table>
-
-
-<a class="btn btn-info btn-icon-split float-right" asp-action="AddPhone" asp-controller="People" asp-route-id="@Model.Id">
-    <span class="text-lg p-2 font-weight-bold mb-1 text-gray-100 float-right">افزودن شماره</span>
-</a>
+}
