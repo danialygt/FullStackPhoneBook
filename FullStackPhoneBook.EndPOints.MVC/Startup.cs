@@ -76,7 +76,7 @@ namespace FullStackPhoneBook.EndPOints.MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=people}/{action=Index}/{id?}");
+                    pattern: "{controller=home}/{action=Index}/{id?}");
             });
             
         }

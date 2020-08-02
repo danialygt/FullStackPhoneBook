@@ -1,114 +1,157 @@
 ﻿<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-action="Index" asp-controller="Home" >
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">YGT Dashboard</div>
+        <div class="sidebar-brand-text mx-3">YGT PhoneBook</div>
     </a>
 
-    <!-- Divider -->
+
     <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
+
     <li class="nav-item">
         <a class="nav-link" asp-controller="Home" asp-action="Index">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <i class="fas fa-fw fa-arrow-right"></i>
+            <span>Home</span>
         </a>
     </li>
 
-    <!-- Divider -->
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-fw fa-arrow-right"></i>
+            <span>People</span>
+        </a>
+    </li>
+
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-fw fa-arrow-right"></i>
+            <span>Tag</span>
+        </a>
+    </li>
+
+
+    <hr class="sidebar-divider">
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-fw fa-arrow-right"></i>
+            <span>User</span>
+        </a>
+    </li>
+
+
+    <hr class="sidebar-divider">
+
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-fw fa-arrow-right"></i>
+            <span>Role</span>
+        </a>
+    </li>
+
+
     <hr class="sidebar-divider">
 
 
 
 
 
-    <!-- Nav Item - Pages Collapse Menu -->
-   @*Home*@
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Home</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" asp-controller="Home" asp-action="Index">FirstPage</a>
-                <a class="collapse-item" asp-controller="Home" asp-action="About">About</a>
+    <!-- Nav Item - Pages Collapse Menu
+        @*Home*@
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Home</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" asp-controller="Home" asp-action="Index">FirstPage</a>
+                    <a class="collapse-item" asp-controller="Home" asp-action="About">About</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    @*Account*@
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Account</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" asp-controller="Account" asp-action="LogIn">LogIn</a>
-                <a class="collapse-item" asp-controller="Account" asp-action="LogOut">LogOut</a>
+        @*Account*@
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Account</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" asp-controller="Account" asp-action="LogIn">LogIn</a>
+                    <a class="collapse-item" asp-controller="Account" asp-action="LogOut">LogOut</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    @*People*@
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>People</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" asp-controller="People" asp-action="Index">List</a>
-                <a class="collapse-item" asp-controller="People" asp-action="Add">Add</a>
+        @*People*@
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>People</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" asp-controller="People" asp-action="Index">List</a>
+                    <a class="collapse-item" asp-controller="People" asp-action="Add">Add</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    @*Role*@
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Role</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" asp-controller="Role" asp-action="Index">List</a>
-                <a class="collapse-item" asp-controller="Role" asp-action="Create">Add</a>
+        @*Role*@
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Role</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" asp-controller="Role" asp-action="Index">List</a>
+                    <a class="collapse-item" asp-controller="Role" asp-action="Create">Add</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    @*Tag*@
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Tag</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" asp-controller="Tag" asp-action="Index">List</a>
+        @*Tag*@
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Tag</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" asp-controller="Tag" asp-action="Index">List</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    @* Users*@
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Users</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" asp-controller="User" asp-action="Index">List</a>
-                <a class="collapse-item" asp-controller="User" asp-action="Create">Add</a>
+        @* Users*@
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Users</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" asp-controller="User" asp-action="Index">List</a>
+                    <a class="collapse-item" asp-controller="User" asp-action="Create">Add</a>
+                </div>
             </div>
-        </div>
-    </li>
-
+        </li>
+    -->
 
 </ul>
