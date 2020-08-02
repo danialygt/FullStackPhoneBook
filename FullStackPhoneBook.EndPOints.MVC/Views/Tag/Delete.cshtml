@@ -1,0 +1,15 @@
+﻿@model FullStackPhoneBook.EndPoints.MVC.Models.Tags.TagModel
+
+
+    <form asp-action="Delete" asp-controller="Tag" method="post">
+            <div class="form-group">
+                <span>Are you sure to delete this tag: "<label>@Model.Title</label>"?</span>
+            </div>
+            
+            <input type="submit" class="btn btn-info" value="Delete" />
+    </form>
+}
+
+    <a class="btn" asp-action="Index" asp-controller="Tag" >Cansel</a>
+
+

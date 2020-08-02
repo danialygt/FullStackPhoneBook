@@ -1,0 +1,24 @@
+﻿@model AppUser
+
+
+
+
+
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+@if (@Model != null)
+{
+    <form  asp-action="Delete" asp-controller="User" method="post" >
+        <div class="form-group">
+            <label> are you sure to delete this user ?!? <br />User: <b>@Model.FirstName @Model.LastName</b></label>
+        </div>
+
+        <input type="submit" class="btn btn-primary mb-2" value="Delete" />
+    </form>
+
+}
+
+    <a class="btn btn-light mb-2" asp-action="Index" asp-controller="User">Back</a>
+
+
+

@@ -1,0 +1,30 @@
+﻿@model FullStackPhoneBook.EndPoints.MVC.Models.AAA.AddRoleModel
+
+
+
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+@if (Model.rolesForDisplay != null)
+{
+    <form asp-action="AddToRole" asp-controller="User" method="post">
+
+        <div class="form-group">
+            <select asp-for="@Model.selectedRole" class="form-control">
+                @foreach (var item in Model.rolesForDisplay)
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <input type="submit" class="btn btn-primary mb-2" value="Save" />
+    </form>
+}
+
+    <a class="btn btn-light mb-2" asp-action="Index" asp-controller="User">Back</a>
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+﻿@model List<MyIdentityRole>
+
+    <table class="table table-bordered table-striped table-dark">
+        <tr>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        <a asp-action="Update" asp-controller="Role" asp-route-id="@item.Id" class="text-gray-100">Edit</a>
+
+                        |
+
+                        <a asp-action="Delete" asp-controller="Role" asp-route-id="@item.Id" class="text-gray-100">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>

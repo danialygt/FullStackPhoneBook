@@ -1,0 +1,17 @@
+﻿@model UpdateUserViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+
+<form asp-action="Update" asp-controller="User" method="post">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input type="text" asp-for="Email" class="form-control" maxlength="50">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="submit" class="btn btn-primary mb-2" value="Save" />
+</form>

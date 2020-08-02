@@ -1,0 +1,51 @@
+﻿@model List<AppUser>
+
+
+
+<table class="table table-bordered table-dark table-striped">
+    <tr>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    @if (Model?.Any() == true)
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName  @item.LastName</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>
+                    <a asp-action="Update" asp-controller="User" asp-route-id="@item.Id" class="btn btn-info" >Edit</a>
+
+                    |
+
+                    <a asp-action="Delete" asp-route-id="@item.Id" asp-controller="User" class="btn btn-info">delete</a>
+
+                    |
+
+                    <a asp-action="AddToRole" asp-controller="User" asp-route-id="@item.Id" class="btn btn-info">Add Role</a>
+                </td>
+
+            </tr>
+        }
+    }
+    else
+    {
+        <tr><td colspan="2">no user</td></tr>
+    }
+</table>
+
+
+<a class="btn btn-info btn-icon-split float-right" asp-controller="User" asp-action="Create">
+    <span class="text-lg p-2 font-weight-bold mb-1 text-gray-100 float-right">افزودن کاربر</span>
+</a>
+
+
+
+
+
+
+

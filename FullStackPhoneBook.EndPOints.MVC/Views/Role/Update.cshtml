@@ -1,0 +1,20 @@
+﻿@model MyIdentityRole
+
+
+
+            <form asp-action="Update" asp-controller="Role" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label asp-for="@Model.Name"></label>
+                        <input type="text" asp-for="@Model.Name" class="form-control" maxlength="50">
+                        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">انصراف</button>
+                    <input type="submit" class="btn btn-info" value="ویرایش" />
+                </div>
+            </form>

@@ -1,0 +1,64 @@
+﻿@model FullStackPhoneBook.Domain.Core.People.Person
+
+
+
+<span>Firstname:  @Model.FirstName</span>
+<br />
+<span>Lastname: @Model.LastName</span>
+<br />
+<span>Email: @Model.Email</span>
+<br />
+<br />
+<span>Address: @Model.Address</span>
+<br />
+<img src="@Model.Image" class="d-block float-right"   width="500px" height="500px"/>
+
+<br />
+<br />
+<br />
+
+<span>Tags: </span>
+@foreach (var item in Model.Tags)
+{
+    <span>@item.Tag.Title,  </span>
+
+}
+
+
+<br />
+<br />
+<br />
+
+
+<span>phones: </span>
+<table class="table table-bordered table-dark ">
+    <tr>
+        <th>Number</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </tr>
+    @if (Model.Phones != null)
+    {
+        @foreach (var item in Model.Phones)
+        {
+            <tr>
+                <td>@item.PhoneNumber</td>
+                <td>@item.PhoneType</td>
+                <td><a asp-action="EditPhone" asp-controller="People" asp-route-id="@item.Id">Edit Phone</a></td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="2" style="justify-content:center;" >there is no phone number for <b>@Model.FirstName</b></td>
+        </tr>
+    }
+
+
+</table>
+
+
+<a class="btn btn-info btn-icon-split float-right" asp-action="AddPhone" asp-controller="People" asp-route-id="@Model.Id">
+    <span class="text-lg p-2 font-weight-bold mb-1 text-gray-100 float-right">افزودن شماره</span>
+</a>

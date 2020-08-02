@@ -1,0 +1,25 @@
+﻿@model FullStackPhoneBook.EndPoints.MVC.Models.Phones.PhoneAddModel
+
+
+    <form asp-action="EditPhone" asp-controller="People" method="post">
+        <input asp-for="@Model.phone.PersonId" value="@Model.person.Id" class="d-none" />
+        
+        <label> edit phone for <b>@Model.person.FirstName @Model.person.LastName</b>: </label>
+
+        <div class="form-group">
+            <label asp-for="@Model.phone.PhoneNumber"></label>
+            <input type="text" asp-for="@Model.phone.PhoneNumber" value="@Model.phone.PhoneNumber" class="form-control" maxlength="50">
+            <span asp-validation-for="@Model.phone.PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.phone.PhoneType"></label>
+            <select asp-for="@Model.phone.PhoneType"
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<FullStackPhoneBook.Domain.Core.Phones.PhoneType>()">
+                <option>@Model.phone.PhoneType</option>
+            </select>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="submit" class="btn btn-primary mb-2" value="Save" />
+    </form>
