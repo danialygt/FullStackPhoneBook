@@ -1,4 +1,8 @@
 ﻿@model FullStackPhoneBook.Domain.Core.People.Person
+@{
+    ViewBag.Title = "Person Detail";
+}
+
 
 @if (Model != null)
 {
@@ -48,7 +52,7 @@
                     <tr>
                         <td>@item.PhoneNumber</td>
                         <td>@item.PhoneType</td>
-                        <td>                    
+                        <td>
                             <a class="btn btn-info btn-icon-split" asp-action="EditPhone" asp-controller="People" asp-route-id="@item.Id">
                                 <span class="font-weight-bold m-1 text-gray-100">Edit Phone</span>
                             </a>
@@ -72,7 +76,7 @@
 
     <div class="row justify-content-end">
         <div class="col-1">
-            <a class="btn btn-info btn-icon-split" asp-action="Index" asp-controller="People">
+            <a class="btn btn-secondary btn-icon-split" asp-action="Index" asp-controller="People">
                 <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Back</span>
             </a>
         </div>
@@ -91,12 +95,12 @@ else
 {
     <div class="row">
         <div class="col">
-                <span class="text-lg p-2 font-weight-bold m-2 text-danger">Person Not Found!</span>
+            <span class="text-lg p-2 font-weight-bold m-2 text-danger">Person Not Found!</span>
         </div>
     </div>
     <div class="row justify-content-end">
         <div class="col-1">
-            <a class="btn btn-info btn-icon-split" asp-action="Index" asp-controller="People">
+            <a class="btn btn-secondary btn-icon-split" asp-action="Index" asp-controller="People">
                 <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Back</span>
             </a>
         </div>

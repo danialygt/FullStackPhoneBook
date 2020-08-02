@@ -71,7 +71,8 @@ namespace FullStackPhoneBook.EndPoints.MVC.Controllers
             {
                 UpdateUserViewModel model = new UpdateUserViewModel
                 {
-                    Email = user.Email
+                    Email = user.Email,
+                    FullName = $"{user.FirstName} {user.LastName}"
                 };
                 return View(model);
             }
@@ -170,6 +171,8 @@ namespace FullStackPhoneBook.EndPoints.MVC.Controllers
                             addRoleModel.rolesForDisplay.Add(item);
                         }
                     }
+
+                    addRoleModel.User = user;
 
                     if (addRoleModel.rolesForDisplay.Count == 0)
                     {

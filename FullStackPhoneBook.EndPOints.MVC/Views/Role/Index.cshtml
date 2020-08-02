@@ -1,17 +1,22 @@
 ﻿@model AddRoleModel
 
+@{
+    ViewData["Title"] = "Role Page";
+}
+
 
 
 @Html.Partial("RoleList", Model.rolesForDisplay)
 
-<a class="btn btn-info btn-icon-split float-right" data-toggle="modal" data-target="#roleAddModal">
-    <span class="text-lg p-2 font-weight-bold mb-1 text-gray-100 float-right">Add</span>
-</a>
 
+<div class="row justify-content-end">
+    <div class="col-2">
+        <a class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#roleAddModal">
+            <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Add Role</span>
+        </a>
+    </div>
+</div>
 
 
 @Html.Partial("RoleAddModal", Model.newRole)
-
-@Html.Partial("RoleEditModal", Model.newRole)
-
 

@@ -1,24 +1,31 @@
 ﻿@model AppUser
+@{
+    ViewData["Title"] = "Delete User";
+}
 
 
 
 
 
-
-    <div asp-validation-summary="All" class="text-danger"></div>
+<div asp-validation-summary="All" class="text-danger"></div>
 @if (@Model != null)
 {
-    <form  asp-action="Delete" asp-controller="User" method="post" >
-        <div class="form-group">
+    <form asp-action="Delete" asp-controller="User" method="post">
+        <div class="form-group col-3">
             <label> are you sure to delete this user ?!? <br />User: <b>@Model.FirstName @Model.LastName</b></label>
         </div>
 
-        <input type="submit" class="btn btn-primary mb-2" value="Delete" />
+        <div class="form-group col-3">
+            <input type="submit" class="text-lg font-weight-bold  btn btn-info m-2 p-2 float-right" value="Delete" />
+        </div>
     </form>
 
 }
 
-    <a class="btn btn-light mb-2" asp-action="Index" asp-controller="User">Back</a>
 
-
+<div class="form-group col-3">
+    <a class="btn btn-secondary   float-right" style="padding:8px;margin-top:9px;" asp-action="Index" asp-controller="User" >
+        <span class="font-weight-bold text-lg">Back</span>
+    </a>
+</div>
 

@@ -1,16 +1,20 @@
 ﻿@model FullStackPhoneBook.EndPoints.MVC.Models.Tags.TagViewModel
 
 @{
-    ViewData["Title"] = "Tag List";
+    ViewData["Title"] = "Tag Page";
 }
 
 
 
 @Html.Partial("TagList", Model.tags)
 
-<a class="btn btn-info btn-icon-split" data-toggle="modal" data-target="#tagModal">
-    <span class="text-lg p-2 font-weight-bold mb-1 text-gray-100 float-right">افزودن برچسب</span>
-</a>
 
+<div class="row justify-content-end">
+    <div class="col-2">
+        <a class="btn btn-info btn-icon-split"  data-toggle="modal" data-target="#tagModal">
+            <span class="text-lg p-2 font-weight-bold m-2 text-gray-100">Add Tag</span>
+        </a>
+    </div>
+</div>
 
 @Html.Partial("AddTagModal", Model.newTag)

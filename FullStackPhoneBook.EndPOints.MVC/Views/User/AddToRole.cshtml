@@ -1,14 +1,18 @@
 ﻿@model FullStackPhoneBook.EndPoints.MVC.Models.AAA.AddRoleModel
+@{
+    ViewData["Title"] = "Add User Role";
+}
 
 
 
-
-    <div asp-validation-summary="All" class="text-danger"></div>
+<div asp-validation-summary="All" class="text-danger"></div>
 @if (Model.rolesForDisplay != null)
 {
     <form asp-action="AddToRole" asp-controller="User" method="post">
-
-        <div class="form-group">
+        <div class="form-group col-3">
+            <label>User: "<b>@Model.User.FirstName @Model.User.LastName</b>"  </label>
+        </div>
+        <div class="form-group col-3">
             <select asp-for="@Model.selectedRole" class="form-control">
                 @foreach (var item in Model.rolesForDisplay)
                 {
@@ -17,13 +21,20 @@
             </select>
         </div>
 
-        <input type="submit" class="btn btn-primary mb-2" value="Save" />
+
+        <div class="form-group col-3">
+            <input type="submit" class="text-lg font-weight-bold  btn btn-info m-2 p-2 float-right" value="Delete" />
+        </div>
     </form>
+
 }
 
-    <a class="btn btn-light mb-2" asp-action="Index" asp-controller="User">Back</a>
 
-
+<div class="form-group col-3">
+    <a class="btn btn-secondary   float-right" style="padding:8px;margin-top:9px;" asp-action="Index" asp-controller="User">
+        <span class="font-weight-bold text-lg">Back</span>
+    </a>
+</div>
 
 
 

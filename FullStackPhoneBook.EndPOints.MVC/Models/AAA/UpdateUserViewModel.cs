@@ -7,6 +7,7 @@ namespace FullStackPhoneBook.EndPoints.MVC.Models.AAA
         [Required]
         [MaxLength(50)]
         public string Email { get; set; }
+        public string FullName { get; set; }
     }
 
 }

@@ -10,7 +10,7 @@ namespace FullStackPhoneBook.EndPoints.MVC.Models.Tags
     {
         [Required]
         [StringLength(50, MinimumLength = 2)]
-        [Display(Name = "نام")]
+        [Display(Name = "tag name")]
         public string Title { get; set; }
 
     }
